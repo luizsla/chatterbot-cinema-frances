@@ -1,0 +1,5 @@
+.container-chat {
+    height: 400px;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+}
