@@ -28,7 +28,7 @@
 
                     <div class="card-body chat-container__corpo">
                         <!-- Aqui vão aparecer as mensagens do chat -->
-                        <div class="mb-2 text-muted text-center" id="conversa-chatterbot">
+                        <div class="mb-2 text-muted" id="conversa-chatterbot">
                             <div class="d-flex justify-content-end mb-2">
                                 <div class="bg-info text-white rounded px-3 py-2">
                                     👤 Olá, chatbot!
@@ -45,7 +45,7 @@
 
                     <div class="card-footer">
                         <div class="d-flex">
-                            <input type="text" class="form-control mr-2" placeholder="Digite sua mensagem..." autocomplete="off" id="conversa-input">
+                            <input type="text" class="form-control mr-2" placeholder="Digite sua mensagem..." autofocus autocomplete="off" id="conversa-input">
                             <button type="button" class="btn btn-primary" id="conversa-enviar-btn">Enviar</button>
                         </div>
                     </div>
@@ -57,13 +57,13 @@
     <div class="d-none">
         <div class="d-flex justify-content-end mb-2" id="mensagem-user-template">
             <div class="bg-info text-white rounded px-3 py-2">
-                👤 Olá, chatbot!
+                👤 <span class="texto-fala"></span>
             </div>
         </div>
 
         <div class="d-flex justify-content-start mb-2" id="mensagem-chat-template">
             <div class="bg-light border rounded px-3 py-2">
-                🤖 Bonjour! Como posso ajudar?
+                🤖 <span class="texto-fala"></span>
             </div>
         </div>
     </div>
