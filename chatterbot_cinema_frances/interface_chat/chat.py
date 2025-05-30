@@ -1,6 +1,6 @@
 from flask import Flask
 
-from chatterbot_cinema_frances.constantes import PORTA_INTERFACE_ROBO
+from chatterbot_cinema_frances.constantes import PORTA_INTERFACE_CHAT
 
 app = Flask(__name__)
 
@@ -10,4 +10,4 @@ def hello_world():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", debug=True, port=PORTA_INTERFACE_ROBO)
+    app.run(host="127.0.0.1", debug=True, port=PORTA_INTERFACE_CHAT)
