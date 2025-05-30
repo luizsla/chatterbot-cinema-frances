@@ -46,7 +46,12 @@
                     <div class="card-footer">
                         <div class="d-flex">
                             <input type="text" class="form-control mr-2" placeholder="Digite sua mensagem..." autofocus autocomplete="off" id="conversa-input">
-                            <button type="button" class="btn btn-primary" id="conversa-enviar-btn">Enviar</button>
+                            <button 
+                                type="button"
+                                class="btn btn-primary"
+                                id="conversa-enviar-btn"
+                                data-url-perguntar="{{ url_for('perguntar_robo') }}"    
+                            >Enviar</button>
                         </div>
                     </div>
                 </div>
@@ -69,11 +74,7 @@
     </div>
 
     <!-- Bootstrap 4 JS, Popper.js, and jQuery -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"

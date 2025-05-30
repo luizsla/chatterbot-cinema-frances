@@ -8,9 +8,12 @@ const app = (() => {
     const botaoEnviar = $("#conversa-enviar-btn");
 
     const perguntarRobo = pergunta => {
-        console.log("A pergunta é: ", pergunta);
+        const urlPergunta = botaoEnviar.data("url-perguntar");
 
-        return "A pergunta é: " + pergunta;
+        return $.get(urlPergunta, {pergunta})
+            .then(resposta => {
+                return "A pergunta é: " + resposta.resposta; 
+            });
     }
 
     const processarFala = (mensagemContainer, fala) => {
@@ -18,9 +21,9 @@ const app = (() => {
         containerConversa.append(mensagemContainer);
     }
 
-    const processarDialogo = () => {
+    const processarDialogo = async () => {
         processarFala(templatesMensagens.user.clone(), inputConversa.val());
-        const resposta = perguntarRobo(inputConversa.val());
+        const resposta = await perguntarRobo(inputConversa.val());
         processarFala(templatesMensagens.chat.clone(), resposta);
         inputConversa.val("");
     }
