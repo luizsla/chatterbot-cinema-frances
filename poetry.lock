@@ -295,6 +295,21 @@ files = [
 ]
 
 [[package]]
+name = "mathparse"
+version = "0.2.1"
+description = "mathparse is a library for solving mathematical equations contained in strings"
+optional = false
+python-versions = "<3.14,>=3.9"
+groups = ["main"]
+files = [
+    {file = "mathparse-0.2.1-py3-none-any.whl", hash = "sha256:0f7bafe3cf91a88bd37e0ff4159b3a777c5ddba26d087d30f362a989c9d1af00"},
+    {file = "mathparse-0.2.1.tar.gz", hash = "sha256:f2986930feb7a7b926e05c15e3cf74ad41e7f209a0332aa6d6a7ec3fcb124fc2"},
+]
+
+[package.extras]
+test = ["flake8", "sphinx (>=7.4,<9.0)"]
+
+[[package]]
 name = "requests"
 version = "2.32.3"
 description = "Python HTTP for Humans."
@@ -355,4 +370,4 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<3.13"
-content-hash = "790540eada1ca88d5910567e9038b3b44a86c072800045872566e367b3632ccc"
+content-hash = "c87cfcfbd0a100c59f7d48717a3c8263ef87883b80e503de9fe5f3c82a0233ef"
