@@ -1,6 +1,8 @@
-from http import HTTPStatus
+import os
+import requests
 
-from flask import Flask, render_template, request, Response, jsonify
+from http import HTTPStatus
+from flask import Flask, render_template, request, jsonify
 
 from chatterbot_cinema_frances.constantes import PORTA_INTERFACE_CHAT
 
@@ -15,12 +17,15 @@ def mostrar_interface_chat():
 @app.route("/robo/perguntar/")
 def perguntar_robo():
     try:
-        pergunta = request.args["pergunta"]
-        print("Irei perguntar o robô aqui!")
-        
-        return {"resposta": pergunta}
+        resposta = requests.post({"pergunta": request.args["pergunta"]})
+        assert resposta.status_code == HTTPStatus.OK, 'Erro na comunicação entre chatAPI e roboAPI'
+        dados_resposta = resposta.json()
+
+        return {"resposta": dados_resposta["resposta"]}
     except KeyError:
         return jsonify(data={"erro": "Parâmetro `GET` *pergunta* obrigatório"}), HTTPStatus.BAD_REQUEST
+    except AssertionError as exp:
+        return jsonify(data={"erro": str(exp)}), HTTPStatus.INTERNAL_SERVER_ERROR
 
 
 

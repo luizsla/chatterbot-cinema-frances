@@ -7,9 +7,11 @@ authors = [
 ]
 license = {text = "MIT License"}
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.11,<3.13"
 dependencies = [
-    "flask (>=3.1.1,<4.0.0)"
+    "flask (>=3.1.1,<4.0.0)",
+    # poetry run pip3 install chatterbot # Chatterbot precisa ser instalado com PIP
+    "requests (>=2.32.3,<3.0.0)"
 ]
 
 
