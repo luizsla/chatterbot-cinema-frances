@@ -1,14 +1,8 @@
-import os
-
 from chatterbot import ChatBot
 from chatterbot_cinema_frances.constantes import NOME_ROBO
 
-
-_path_db_robo = os.path.join(os.path.dirname(__file__), "robo.sqlite")
-
 def iniciar_robo():
-    chatbot = ChatBot(NOME_ROBO)
-
+    chatbot = ChatBot(NOME_ROBO, database_uri=f"sqlite:///chat.sqlite3")
 
     return chatbot
 
@@ -26,5 +20,5 @@ def main():
             print(f"🪴 {chatbot.get_response(query)}")
 
 
-if __name__ == "__main___":
+if __name__ == "__main__":
     main()
