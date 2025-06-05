@@ -1,3 +1,5 @@
+from http import HTTPStatus
+
 from flask import Flask, request
 
 from chatterbot_cinema_frances.constantes import PORTA_INTERFACE_ROBO
@@ -8,12 +10,15 @@ app = Flask(__name__)
 _robo_client = iniciar_robo()
 
 
-@app.route("/responder")
+@app.post("/responder")
 def hello_world():
     try:
-        resposta = _robo_client.get_response()
+        pergunta = request.get_json()["pergunta"]
+        resposta = _robo_client.get_response(pergunta)
+        
+        return {"resposta": resposta.text, "confianca": resposta.confidence}, HTTPStatus.OK
     except KeyError:
-        pass
+        return {"erro": "Parâmetro `POST` *pergunta* obrigatório"}, HTTPStatus.BAD_REQUEST
 
 
 

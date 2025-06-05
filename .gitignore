@@ -175,4 +175,4 @@ cython_debug/
 
 
 # SQLite
-*.sqlite3
+*.sqlite3*
