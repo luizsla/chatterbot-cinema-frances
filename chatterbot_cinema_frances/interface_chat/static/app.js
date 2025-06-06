@@ -6,6 +6,7 @@ const app = (() => {
     const containerConversa = $("#conversa-chatterbot");
     const inputConversa = $("#conversa-input");
     const botaoEnviar = $("#conversa-enviar-btn");
+    const botaoBuscar = $("#buscar-roteiros-btn");
     const Toast = Swal.mixin({
         toast: true,
         position: "top-end",
@@ -43,9 +44,10 @@ const app = (() => {
         containerConversa.append(mensagemContainer);
     }
 
-    const processarDialogo = async () => {
-        processarFala(templatesMensagens.user.clone(), inputConversa.val());
-        const resposta = await perguntarRobo(inputConversa.val());
+    const processarDialogo = async (fala = null) => {
+        const falaEnviar = fala == null ? inputConversa.val() : fala;
+        processarFala(templatesMensagens.user.clone(), falaEnviar);
+        const resposta = await perguntarRobo(falaEnviar);
         if (resposta == null) return;
 
         processarFala(templatesMensagens.chat.clone(), resposta);
@@ -61,6 +63,7 @@ const app = (() => {
             });
 
             botaoEnviar.on("click", processarDialogo);
+            botaoBuscar.on("click", () => processarDialogo("quero roteiros"));
         }
     }
 })();
