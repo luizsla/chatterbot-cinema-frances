@@ -4,9 +4,7 @@
             "mensagens": [
                 "quero roteiros", "pesquisar roteiros", "roteiros"
             ],
-            "resposta": [
-                "Por favor, digite as palavras-chave (máx 7) para busca de roteiros separadas por vírgula e sem pontuação extra. Ex: Paris,meia-noite,Allen"
-            ]
+            "resposta": "Por favor, digite as palavras-chave (máx 7) para busca de roteiros separadas por vírgula e sem pontuação extra. Ex: Paris,meia-noite,Allen"
         },
         {
             "mensagens": [
@@ -15,9 +13,7 @@
                 "roteiros de filmes franceses",
                 "quero ver roteiros de filmes franceses"
             ],
-            "resposta": [
-                "Digite palavras-chave relacionadas ao filme francês que deseja encontrar. Ex: Amélie,Poulain,Jeunet"
-            ]
+            "resposta": "Digite palavras-chave relacionadas ao filme francês que deseja encontrar. Ex: Amélie,Poulain,Jeunet"
         },
         {
             "mensagens": [
@@ -25,9 +21,7 @@
                 "posso ver o roteiro de Amélie?",
                 "onde encontro o roteiro de Amélie Poulain?"
             ],
-            "resposta": [
-                "Por favor, digite as palavras-chave do filme para buscar o roteiro. Ex: Amélie,Poulain,Jeunet"
-            ]
+            "resposta": "Por favor, digite as palavras-chave do filme para buscar o roteiro. Ex: Amélie,Poulain,Jeunet"
         },
         {
             "mensagens": [
@@ -35,9 +29,7 @@
                 "roteiros de clássicos do cinema francês",
                 "tem roteiros de filmes franceses antigos?"
             ],
-            "resposta": [
-                "Digite palavras-chave do filme clássico francês que procura. Ex: Truffaut,400,Golpes"
-            ]
+            "resposta": "Digite palavras-chave do filme clássico francês que procura. Ex: Truffaut,400,Golpes"
         },
         {
             "mensagens": [
@@ -45,9 +37,7 @@
                 "onde posso buscar roteiros de cinema francês?",
                 "quero acessar roteiros franceses"
             ],
-            "resposta": [
-                "Digite as palavras-chave do roteiro francês que deseja buscar. Ex: Godard,Acossado"
-            ]
+            "resposta": "Digite as palavras-chave do roteiro francês que deseja buscar. Ex: Godard,Acossado"
         },
         {
             "mensagens": [
@@ -55,9 +45,7 @@
                 "quais roteiros franceses ganharam prêmios?",
                 "roteiros de filmes franceses premiados"
             ],
-            "resposta": [
-                "Digite palavras-chave do filme francês premiado que deseja encontrar. Ex: Haneke,Amor"
-            ]
+            "resposta": "Digite palavras-chave do filme francês premiado que deseja encontrar. Ex: Haneke,Amor"
         },
         {
             "mensagens": [
@@ -65,9 +53,7 @@
                 "roteiros de filmes franceses de comédia",
                 "quero roteiros de comédia do cinema francês"
             ],
-            "resposta": [
-                "Digite palavras-chave do filme de comédia francês que procura. Ex: Intocáveis,Nakache,Toledano"
-            ]
+            "resposta": "Digite palavras-chave do filme de comédia francês que procura. Ex: Intocáveis,Nakache,Toledano"
         },
         {
             "mensagens": [
@@ -75,9 +61,7 @@
                 "quais são os roteiros de lançamentos franceses?",
                 "roteiros de filmes franceses novos"
             ],
-            "resposta": [
-                "Digite palavras-chave do filme francês recente que deseja buscar. Ex: Retrato, jovem, chamas"
-            ]
+            "resposta": "Digite palavras-chave do filme francês recente que deseja buscar. Ex: Retrato, jovem, chamas"
         },
         {
             "mensagens": [
@@ -85,9 +69,7 @@
                 "roteiros de drama do cinema francês",
                 "tem roteiros de dramas franceses?"
             ],
-            "resposta": [
-                "Digite palavras-chave do filme de drama francês que procura. Ex: Azul,É,a,Cor,Mais,Quente"
-            ]
+            "resposta": "Digite palavras-chave do filme de drama francês que procura. Ex: Azul,É,a,Cor,Mais,Quente"
         },
         {
             "mensagens": [
@@ -95,9 +77,7 @@
                 "roteiros de filmes franceses conhecidos",
                 "quero roteiros de filmes franceses populares"
             ],
-            "resposta": [
-                "Digite palavras-chave do filme francês famoso que deseja buscar. Ex: O,Artista,Hazanavicius"
-            ]
+            "resposta": "Digite palavras-chave do filme francês famoso que deseja buscar. Ex: O,Artista,Hazanavicius"
         }
     ]
 }
