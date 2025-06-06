@@ -6,7 +6,7 @@ const app = (() => {
     const containerConversa = $("#conversa-chatterbot");
     const inputConversa = $("#conversa-input");
     const botaoEnviar = $("#conversa-enviar-btn");
-    const botaoBuscar = $("#buscar-roteiros-btn");
+    const botaoBuscar = $("#buscar-sinopses-btn");
     const Toast = Swal.mixin({
         toast: true,
         position: "top-end",
@@ -63,7 +63,7 @@ const app = (() => {
             });
 
             botaoEnviar.on("click", processarDialogo);
-            botaoBuscar.on("click", () => processarDialogo("quero roteiros"));
+            botaoBuscar.on("click", () => processarDialogo("quero sinopses"));
         }
     }
 })();

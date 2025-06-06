@@ -2,16 +2,16 @@
     "conversas": [
         {
             "mensagens": [
-                "quero roteiros", "pesquisar roteiros", "roteiros"
+                "quero sinopses", "pesquisar sinopses", "sinopses"
             ],
-            "resposta": "Por favor, digite as palavras-chave (máx 7) para busca de roteiros separadas por vírgula e sem pontuação extra. Ex: Paris,meia-noite,Allen"
+            "resposta": "Por favor, digite as palavras-chave (máx 7) para busca de sinopses separadas por vírgula e sem pontuação extra. Ex: Paris,meia-noite,Allen"
         },
         {
             "mensagens": [
-                "me mostre roteiros de filmes franceses",
-                "quais são os roteiros de cinema francês?",
-                "roteiros de filmes franceses",
-                "quero ver roteiros de filmes franceses"
+                "me mostre sinopses de filmes franceses",
+                "quais são os sinopses de cinema francês?",
+                "sinopses de filmes franceses",
+                "quero ver sinopses de filmes franceses"
             ],
             "resposta": "Digite palavras-chave relacionadas ao filme francês que deseja encontrar. Ex: Amélie,Poulain,Jeunet"
         },
@@ -25,57 +25,57 @@
         },
         {
             "mensagens": [
-                "quero pesquisar roteiros de filmes franceses clássicos",
-                "roteiros de clássicos do cinema francês",
-                "tem roteiros de filmes franceses antigos?"
+                "quero pesquisar sinopses de filmes franceses clássicos",
+                "sinopses de clássicos do cinema francês",
+                "tem sinopses de filmes franceses antigos?"
             ],
             "resposta": "Digite palavras-chave do filme clássico francês que procura. Ex: Truffaut,400,Golpes"
         },
         {
             "mensagens": [
-                "como encontro roteiros de filmes franceses?",
-                "onde posso buscar roteiros de cinema francês?",
-                "quero acessar roteiros franceses"
+                "como encontro sinopses de filmes franceses?",
+                "onde posso buscar sinopses de cinema francês?",
+                "quero acessar sinopses franceses"
             ],
             "resposta": "Digite as palavras-chave do roteiro francês que deseja buscar. Ex: Godard,Acossado"
         },
         {
             "mensagens": [
-                "você tem roteiros de filmes franceses premiados?",
-                "quais roteiros franceses ganharam prêmios?",
-                "roteiros de filmes franceses premiados"
+                "você tem sinopses de filmes franceses premiados?",
+                "quais sinopses franceses ganharam prêmios?",
+                "sinopses de filmes franceses premiados"
             ],
             "resposta": "Digite palavras-chave do filme francês premiado que deseja encontrar. Ex: Haneke,Amor"
         },
         {
             "mensagens": [
-                "posso ver roteiros de comédias francesas?",
-                "roteiros de filmes franceses de comédia",
-                "quero roteiros de comédia do cinema francês"
+                "posso ver sinopses de comédias francesas?",
+                "sinopses de filmes franceses de comédia",
+                "quero sinopses de comédia do cinema francês"
             ],
             "resposta": "Digite palavras-chave do filme de comédia francês que procura. Ex: Intocáveis,Nakache,Toledano"
         },
         {
             "mensagens": [
-                "tem roteiros de filmes franceses recentes?",
-                "quais são os roteiros de lançamentos franceses?",
-                "roteiros de filmes franceses novos"
+                "tem sinopses de filmes franceses recentes?",
+                "quais são os sinopses de lançamentos franceses?",
+                "sinopses de filmes franceses novos"
             ],
             "resposta": "Digite palavras-chave do filme francês recente que deseja buscar. Ex: Retrato, jovem, chamas"
         },
         {
             "mensagens": [
-                "quero roteiros de filmes franceses de drama",
-                "roteiros de drama do cinema francês",
-                "tem roteiros de dramas franceses?"
+                "quero sinopses de filmes franceses de drama",
+                "sinopses de drama do cinema francês",
+                "tem sinopses de dramas franceses?"
             ],
             "resposta": "Digite palavras-chave do filme de drama francês que procura. Ex: Azul,É,a,Cor,Mais,Quente"
         },
         {
             "mensagens": [
-                "onde encontro roteiros de filmes franceses famosos?",
-                "roteiros de filmes franceses conhecidos",
-                "quero roteiros de filmes franceses populares"
+                "onde encontro sinopses de filmes franceses famosos?",
+                "sinopses de filmes franceses conhecidos",
+                "quero sinopses de filmes franceses populares"
             ],
             "resposta": "Digite palavras-chave do filme francês famoso que deseja buscar. Ex: O,Artista,Hazanavicius"
         }
