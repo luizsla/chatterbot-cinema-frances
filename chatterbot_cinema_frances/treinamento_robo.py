@@ -29,9 +29,9 @@ def _treinar_com_lista(treinador):
         with open(arquivo, 'r') as arquivo_aberto:
             json_arquivo = json.load(arquivo_aberto)
             for conversa in json_arquivo["conversas"]:
-                resposta = conversa["resposta"]
-                for mensagem in conversa["mensagens"]:
-                    treinador.train([mensagem, resposta])
+                treinador.train(conversa["mensagens"] + conversa["resposta"])
+
+    print("Treinamento com arquivos de lista finalizado!")
 
 
 
