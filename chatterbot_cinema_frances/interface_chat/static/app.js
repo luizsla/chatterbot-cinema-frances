@@ -23,17 +23,17 @@ const app = (() => {
         const urlPergunta = botaoEnviar.data("url-perguntar");
 
         return $.get(urlPergunta, {pergunta})
-            .then(resposta => {
-                console.log(resposta);
-
-                return resposta.resposta; 
-            })
-            .fail(() => {
-                Toast.fire({
-                    icon: "error",
-                    title: "Houve um erro inesperado ao estabelecer à conversa",
-                    text: "Por favor, tente novamente."
-                });
+            .then(resposta => resposta.resposta)
+            .fail(resposta => {
+                if (resposta.status = 400) {
+                    processarFala(templatesMensagens.chat.clone(), resposta.responseJSON.erro);
+                } else {
+                    Toast.fire({
+                        icon: "error",
+                        title: "Houve um erro inesperado ao estabelecer à conversa",
+                        text: "Por favor, tente novamente."
+                    });
+                }
 
                 return null;
             }); 

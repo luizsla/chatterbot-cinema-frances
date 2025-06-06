@@ -5,4 +5,6 @@ PORTA_INTERFACE_ROBO = 5001
 
 NOME_ROBO = "cinema_france"
 
+CONFIANCA_MINIMA = 0.5
+
 URL_ROBO_API = f"http://localhost:{PORTA_INTERFACE_ROBO}"
