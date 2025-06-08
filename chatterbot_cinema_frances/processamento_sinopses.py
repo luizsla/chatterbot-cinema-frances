@@ -6,6 +6,8 @@ from string import punctuation
 from nltk import word_tokenize, corpus
 from nltk.corpus import floresta
 
+from chatterbot_cinema_frances.database import iniciar_db, gravar_sinopse
+
 
 _diretorio_arquivos = os.path.join(os.path.dirname(__file__), "sinopses_filmes")
 
@@ -79,6 +81,7 @@ def _filtrar_por_tokens_mais_presentes(tokens, n=7):
     return tuple(palavra for palavra, _ in contador.most_common(n))
 
 
+
 def _processar_sinopse_filme(sinopse):
     tokens = word_tokenize(sinopse.lower())
     tokens_sem_palavras_parada = _eliminar_palavras_de_parada(tokens)
@@ -93,6 +96,8 @@ def _processar_sinopse_filme(sinopse):
 
 
 def main():
+    iniciar_db()
+
     for contador in range(1, _NUMERO_MAX_ARTIGOS):
         arquivo_sinopse = os.path.join(_diretorio_arquivos, "%d.yaml" % contador)
         with open(arquivo_sinopse, 'r', encoding="utf-8") as arquivo:
@@ -100,8 +105,10 @@ def main():
             titulo = _extrair_titulo(dados_sinopse)
             sinopse = _extrair_sinopse(dados_sinopse)
             info_adicional = _extrair_info_adicional(dados_sinopse)
-            tokens_filme = _processar_sinopse_filme(sinopse)
-            assert len(tokens_filme) == 7, "Todas às sinopses devem ter 7 tags"
+            tokens_sinopse = _processar_sinopse_filme(sinopse)
+            assert len(tokens_sinopse) == 7, "Todas às sinopses devem ter 7 tags"
+
+            gravar_sinopse(titulo, sinopse, info_adicional, tokens_sinopse)
 
 
 if __name__ == "__main__":
