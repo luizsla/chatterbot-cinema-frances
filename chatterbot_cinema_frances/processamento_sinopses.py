@@ -1,5 +1,4 @@
 import os
-import sqlite3
 import yaml
 
 from collections import Counter
@@ -77,7 +76,7 @@ def _eliminar_classes_gramaticais_indesejadas(tokens):
 def _filtrar_por_tokens_mais_presentes(tokens, n=7):
     contador = Counter(tokens)
     # Retorna os n tokens mais comuns e suas contagens
-    return tuple(palavra for palavra, vezes in contador.most_common(n))
+    return tuple(palavra for palavra, _ in contador.most_common(n))
 
 
 def _processar_sinopse_filme(sinopse):
