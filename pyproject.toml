@@ -13,7 +13,8 @@ dependencies = [
     # poetry run pip3 install chatterbot # Chatterbot precisa ser instalado com PIP
     "requests (>=2.32.3,<3.0.0)",
     "mathparse (>=0.2.1,<0.3.0)",
-    "pyyaml (>=6.0.2,<7.0.0)"
+    "pyyaml (>=6.0.2,<7.0.0)",
+    "nltk (>=3.9.1,<4.0.0)"
 ]
 
 
