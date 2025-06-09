@@ -39,6 +39,44 @@ _CREATE_TAGS_QUERY = """
     INSERT INTO tags (sinopse_id, tag_1, tag_2, tag_3, tag_4, tag_5, tag_6, tag_7) VALUES (?, ?, ?, ?, ?, ?, ?, ?);
 """
 
+def build_select_sinopses_por_tags_query(tags): # Gerado com copilot
+    """
+    Gera a query SQL e os parâmetros para buscar sinopses que contenham todas as tags fornecidas.
+    """
+    base_query = """
+        SELECT
+            titulo,
+            info_adicional,
+            sinopse,
+            t.tag_1,
+            t.tag_2,
+            t.tag_3,
+            t.tag_4,
+            t.tag_5,
+            t.tag_6,
+            t.tag_7
+        FROM
+            sinopses s
+        JOIN tags t ON
+            t.sinopse_id = s.id
+    """
+    if not tags:
+        return base_query, []
+
+    # Para cada tag, verifica se ela está em alguma das colunas de tags
+    where_clauses = []
+    params = []
+    for tag in tags:
+        clause = "(" + " OR ".join([f"t.tag_{i} = ?" for i in range(1, 8)]) + ")"
+        where_clauses.append(clause)
+        params.extend([tag] * 7)
+
+    where_statement = " WHERE " + " OR ".join(where_clauses)
+    final_query = base_query + where_statement
+
+    return final_query, params
+
+
 _db_artigos = os.path.join(os.path.dirname(__file__), "sinopses.sqlite")
 
 
@@ -68,6 +106,28 @@ def gravar_sinopse(titulo, sinopse, info_adicional, tokens_sinopse):
             conexao.commit()
 
     print("Gravando dados de: {}".format(titulo))
+
+
+
+def buscar_sinopses_por_tags(tags):
+    select_query, params = build_select_sinopses_por_tags_query(tags)
+    with closing(sqlite3.connect(_db_artigos)) as conexao:
+        with closing(conexao.cursor()) as cursor:
+            cursor.execute(select_query, params)
+            resultados = cursor.fetchall()
+
+    return [{
+        "titulo": row[0],
+        "info_adicional": row[1],
+        "sinopse": row[2],
+        "tag_1": row[3],
+        "tag_2": row[4],
+        "tag_3": row[5],
+        "tag_4": row[6],
+        "tag_5": row[7],
+        "tag_6": row[8],
+        "tag_7": row[9]
+    } for row in resultados]
 
 
 if __name__ == "__main__":

@@ -7,4 +7,6 @@ NOME_ROBO = "cinema_france"
 
 CONFIANCA_MINIMA = 0.5
 
+MODO_PESQUISA_SINOPSES = "quero sinopses"
+
 URL_ROBO_API = f"http://localhost:{PORTA_INTERFACE_ROBO}"
