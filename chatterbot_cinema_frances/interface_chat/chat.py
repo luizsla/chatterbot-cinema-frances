@@ -18,7 +18,7 @@ def mostrar_interface_chat():
 
 @app.get("/sinopses/<path:nome_arquivo>")
 def download_artigo(nome_arquivo):
-    return send_from_directory("static/arquivos", nome_arquivo, as_attachment=True)
+    return send_from_directory("static/sinopses_filmes", nome_arquivo, as_attachment=True)
 
 
 @app.route("/robo/perguntar/")

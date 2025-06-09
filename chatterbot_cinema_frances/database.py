@@ -8,7 +8,8 @@ _CREATE_SINOPSE_TABELA_QUERY = """
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         titulo TEXT,
         info_adicional TEXT,
-        sinopse TEXT
+        sinopse TEXT,
+        nome_arquivo TEXT
     );
 """
 
@@ -28,7 +29,7 @@ _CREATE_TAGS_TABELA_QUERY = """
 """
 
 _CREATE_SINOPSE_QUERY = """
-    INSERT INTO sinopses (titulo, info_adicional, sinopse) VALUES (?, ?, ?);
+    INSERT INTO sinopses (titulo, info_adicional, sinopse, nome_arquivo) VALUES (?, ?, ?, ?);
 """
 
 _GET_SINOPSE_QUERY = """
@@ -48,6 +49,7 @@ def build_select_sinopses_por_tags_query(tags): # Gerado com copilot
             titulo,
             info_adicional,
             sinopse,
+            nome_arquivo,
             t.tag_1,
             t.tag_2,
             t.tag_3,
@@ -94,10 +96,10 @@ def iniciar_db():
 
 
 
-def gravar_sinopse(titulo, sinopse, info_adicional, tokens_sinopse):
+def gravar_sinopse(titulo, sinopse, info_adicional, nome_arquivo, tokens_sinopse):
     with closing(sqlite3.connect(_db_artigos)) as conexao:
         with closing(conexao.cursor()) as cursor:
-            cursor.execute(_CREATE_SINOPSE_QUERY, (titulo, info_adicional, sinopse))
+            cursor.execute(_CREATE_SINOPSE_QUERY, (titulo, info_adicional, sinopse, nome_arquivo))
             assert cursor.rowcount == 1, "Sinopse {} não pode ser criada".format(titulo)
             cursor.execute(_GET_SINOPSE_QUERY)
             id_ = cursor.fetchone()[0]
@@ -120,13 +122,14 @@ def buscar_sinopses_por_tags(tags):
         "titulo": row[0],
         "info_adicional": row[1],
         "sinopse": row[2],
-        "tag_1": row[3],
-        "tag_2": row[4],
-        "tag_3": row[5],
-        "tag_4": row[6],
-        "tag_5": row[7],
-        "tag_6": row[8],
-        "tag_7": row[9]
+        "nome_arquivo": row[3],
+        "tag_1": row[4],
+        "tag_2": row[5],
+        "tag_3": row[6],
+        "tag_4": row[7],
+        "tag_5": row[8],
+        "tag_6": row[9],
+        "tag_7": row[10]
     } for row in resultados]
 
 

@@ -52,7 +52,7 @@ const app = (() => {
                     <strong>Título:</strong> ${el.titulo}<br>
                     <strong>Informações adicionais:</strong> ${el.info_adicional}<br>
                     <strong>Sinopse:</strong> ${el.sinopse.slice(0, 100)}...<br>
-                    <strong>Download:</strong> <a href="#">AQUI</a>
+                    <strong>Download:</strong> <a href="/sinopses/${el.nome_arquivo}">Link</a>
                 </li>`);
 
                 mensagemContainer.find(".list-group").append(sinopseHTML);

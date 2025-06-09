@@ -99,7 +99,8 @@ def main():
     iniciar_db()
 
     for contador in range(1, _NUMERO_MAX_ARTIGOS):
-        arquivo_sinopse = os.path.join(_diretorio_arquivos, "%d.yaml" % contador)
+        nome_arquivo = "%d.yaml" % contador
+        arquivo_sinopse = os.path.join(_diretorio_arquivos, nome_arquivo)
         with open(arquivo_sinopse, 'r', encoding="utf-8") as arquivo:
             dados_sinopse = yaml.load(arquivo, Loader=yaml.SafeLoader)
             titulo = _extrair_titulo(dados_sinopse)
@@ -108,7 +109,7 @@ def main():
             tokens_sinopse = _processar_sinopse_filme(sinopse)
             assert len(tokens_sinopse) == 7, "Todas às sinopses devem ter 7 tags"
 
-            gravar_sinopse(titulo, sinopse, info_adicional, tokens_sinopse)
+            gravar_sinopse(titulo, sinopse, info_adicional, nome_arquivo, tokens_sinopse)
 
 
 if __name__ == "__main__":
