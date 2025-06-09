@@ -2,7 +2,7 @@ import requests
 import secrets
 
 from http import HTTPStatus
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, send_from_directory
 
 from chatterbot_cinema_frances.constantes import CONFIANCA_MINIMA, PORTA_INTERFACE_CHAT, URL_ROBO_API, MODO_PESQUISA_SINOPSES
 from chatterbot_cinema_frances.database import buscar_sinopses_por_tags
@@ -16,10 +16,9 @@ def mostrar_interface_chat():
     return render_template("index.html")
 
 
-
-def _pesquisar_sinopses(tags):
-    pass
-
+@app.get("/sinopses/<path:nome_arquivo>")
+def download_artigo(nome_arquivo):
+    return send_from_directory("static/arquivos", nome_arquivo, as_attachment=True)
 
 
 @app.route("/robo/perguntar/")

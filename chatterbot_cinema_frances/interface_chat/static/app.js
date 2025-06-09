@@ -46,15 +46,24 @@ const app = (() => {
     }
 
     const postar_resultados_pesquisa = (mensagemContainer, resultados) => {
-        resultados.forEach(el => {
-            const sinopseHTML = $(`<li class="list-group-item">
-                Título: ${el.titulo}<br>
-                Informações adicionais: ${el.info_adicional}<br>
-                Sinopse: ${el.sinopse.slice(0, 100)}...
-            </li>`);
+        if (resultados) {
+            resultados.forEach(el => {
+                const sinopseHTML = $(`<li class="list-group-item">
+                    <strong>Título:</strong> ${el.titulo}<br>
+                    <strong>Informações adicionais:</strong> ${el.info_adicional}<br>
+                    <strong>Sinopse:</strong> ${el.sinopse.slice(0, 100)}...<br>
+                    <strong>Download:</strong> <a href="#">AQUI</a>
+                </li>`);
 
-            mensagemContainer.find(".list-group").append(sinopseHTML);
-        });
+                mensagemContainer.find(".list-group").append(sinopseHTML);
+            });
+        } else {
+            mensagemContainer.find(".list-group").append(
+                `<li class="list-group-item">
+                    Infelizmente não houve resultado para a busca realizada. Por favor, tente novamente.
+                </li>`
+            );
+        }
 
         containerConversa.append(mensagemContainer);
     }

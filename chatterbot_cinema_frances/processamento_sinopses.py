@@ -9,7 +9,7 @@ from nltk.corpus import floresta
 from chatterbot_cinema_frances.database import iniciar_db, gravar_sinopse
 
 
-_diretorio_arquivos = os.path.join(os.path.dirname(__file__), "sinopses_filmes")
+_diretorio_arquivos = os.path.join(os.path.dirname(__file__), "interface_chat/static/sinopses_filmes")
 
 _NUMERO_MAX_ARTIGOS = 52
 
