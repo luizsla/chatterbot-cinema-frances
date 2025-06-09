@@ -27,9 +27,6 @@ def perguntar_robo():
     try:
         if session.get("em_modo_pesquisa", False):
             tags = request.args["pergunta"].split(",")
-
-            print('As tags são', tags)
-
             sinopses = buscar_sinopses_por_tags(tags)
             session["em_modo_pesquisa"] = False
 

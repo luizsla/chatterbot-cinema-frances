@@ -1,7 +1,8 @@
 const app = (() => {
     const templatesMensagens = {
         chat: $("#mensagem-chat-template"),
-        user: $("#mensagem-user-template")
+        user: $("#mensagem-user-template"),
+        pesquisa: $("#mensagem-pesquisa-template")
     }
     const containerConversa = $("#conversa-chatterbot");
     const inputConversa = $("#conversa-input");
@@ -23,7 +24,7 @@ const app = (() => {
         const urlPergunta = botaoEnviar.data("url-perguntar");
 
         return $.get(urlPergunta, {pergunta})
-            .then(resposta => resposta.resposta)
+            .then(resposta => resposta)
             .fail(resposta => {
                 if (resposta.status = 400) {
                     processarFala(templatesMensagens.chat.clone(), resposta.responseJSON.erro);
@@ -44,13 +45,32 @@ const app = (() => {
         containerConversa.append(mensagemContainer);
     }
 
+    const postar_resultados_pesquisa = (mensagemContainer, resultados) => {
+        resultados.forEach(el => {
+            const sinopseHTML = $(`<li class="list-group-item">
+                Título: ${el.titulo}<br>
+                Informações adicionais: ${el.info_adicional}<br>
+                Sinopse: ${el.sinopse.slice(0, 100)}...
+            </li>`);
+
+            mensagemContainer.find(".list-group").append(sinopseHTML);
+        });
+
+        containerConversa.append(mensagemContainer);
+    }
+
     const processarDialogo = async (fala = null) => {
         const falaEnviar = fala == null ? inputConversa.val() : fala;
         processarFala(templatesMensagens.user.clone(), falaEnviar);
         const resposta = await perguntarRobo(falaEnviar);
         if (resposta == null) return;
 
-        processarFala(templatesMensagens.chat.clone(), resposta);
+        if (resposta.modo == "chat") {
+            processarFala(templatesMensagens.chat.clone(), resposta.resposta);
+        } else {
+            postar_resultados_pesquisa(templatesMensagens.pesquisa.clone(), resposta.sinopses);
+        }
+        
         inputConversa.val("");
     }
 
